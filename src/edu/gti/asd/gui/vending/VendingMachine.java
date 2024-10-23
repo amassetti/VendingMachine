@@ -90,6 +90,9 @@ public class VendingMachine extends javax.swing.JFrame {
         jMenuItemAddStock = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItemClearAll = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jCheckBoxMenuItemShowProductStock = new javax.swing.JCheckBoxMenuItem();
+        jCheckBoxMenuItemShowCoinsStock = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vending Machine");
@@ -447,6 +450,30 @@ public class VendingMachine extends javax.swing.JFrame {
             }
         });
         Admin.add(jMenuItemClearAll);
+        Admin.add(jSeparator2);
+
+        jCheckBoxMenuItemShowProductStock.setSelected(true);
+        jCheckBoxMenuItemShowProductStock.setText("Show product stock");
+        jCheckBoxMenuItemShowProductStock.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jCheckBoxMenuItemShowProductStockStateChanged(evt);
+            }
+        });
+        jCheckBoxMenuItemShowProductStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItemShowProductStockActionPerformed(evt);
+            }
+        });
+        Admin.add(jCheckBoxMenuItemShowProductStock);
+
+        jCheckBoxMenuItemShowCoinsStock.setSelected(true);
+        jCheckBoxMenuItemShowCoinsStock.setText("Show coins stock");
+        jCheckBoxMenuItemShowCoinsStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItemShowCoinsStockActionPerformed(evt);
+            }
+        });
+        Admin.add(jCheckBoxMenuItemShowCoinsStock);
 
         jMenuBar1.add(Admin);
 
@@ -628,6 +655,28 @@ public class VendingMachine extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jMenuItemExitActionPerformed
 
+    private void jCheckBoxMenuItemShowProductStockStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemShowProductStockStateChanged
+    
+    }//GEN-LAST:event_jCheckBoxMenuItemShowProductStockStateChanged
+
+    private void jCheckBoxMenuItemShowProductStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemShowProductStockActionPerformed
+        if (jCheckBoxMenuItemShowProductStock.isSelected()) {
+            showProductsStock();
+        } else {
+            hideProductsStock();
+        }
+        
+    }//GEN-LAST:event_jCheckBoxMenuItemShowProductStockActionPerformed
+
+    private void jCheckBoxMenuItemShowCoinsStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemShowCoinsStockActionPerformed
+        if (jCheckBoxMenuItemShowCoinsStock.isSelected()) {
+            showCoinsStock();
+        } else {
+            hideCoinsStock();
+        }
+        
+    }//GEN-LAST:event_jCheckBoxMenuItemShowCoinsStockActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -669,6 +718,8 @@ public class VendingMachine extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonCancel;
     private javax.swing.JButton jButtonPay;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemShowCoinsStock;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemShowProductStock;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10c;
     private javax.swing.JLabel jLabel1e;
@@ -702,9 +753,43 @@ public class VendingMachine extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JToggleButton jToggleButton7Up;
     private javax.swing.JToggleButton jToggleButtonCoca;
     private javax.swing.JToggleButton jToggleButtonFanta;
     private javax.swing.JToggleButton jToggleButtonSchweps;
     // End of variables declaration//GEN-END:variables
+
+    private void hideProductsStock() {
+        productCoca.hideStock();
+        product7up.hideStock();
+        productFanta.hideStock();
+        productSchweps.hideStock();
+
+    }
+
+    private void hideCoinsStock() {
+        coin10c.hideStock();
+        coin20c.hideStock();
+        coin50c.hideStock();
+        coin1e.hideStock();
+        coin2e.hideStock();
+
+    }
+
+    private void showProductsStock() {
+        productCoca.showStock();
+        product7up.showStock();
+        productFanta.showStock();
+        productSchweps.showStock();
+    }
+
+    private void showCoinsStock() {
+        coin10c.showStock();
+        coin20c.showStock();
+        coin50c.showStock();
+        coin1e.showStock();
+        coin2e.showStock();
+
+    }
 }

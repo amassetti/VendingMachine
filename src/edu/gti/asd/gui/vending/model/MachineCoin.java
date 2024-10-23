@@ -4,6 +4,7 @@
  */
 package edu.gti.asd.gui.vending.model;
 
+import java.util.Locale;
 import javax.swing.JLabel;
 
 /**
@@ -67,6 +68,14 @@ public class MachineCoin {
     public void resetStock() {
         this.quantity = 0;
         quantityLabel.setText(""+quantity);
+    }
+    
+    public void hideStock() {
+        quantityLabel.setVisible(false);
+    }
+
+    public void showStock() {
+        quantityLabel.setVisible(true);
     }
     
 

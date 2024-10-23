@@ -61,7 +61,13 @@ public class MachineProduct {
         this.price = price;
     }
 
-    
+    public void hideStock() {
+        quantityLabel.setVisible(false);
+    }
+
+    public void showStock() {
+        quantityLabel.setVisible(true);
+    }
 
     @Override
     public String toString() {
