@@ -5,6 +5,7 @@
 package edu.gti.asd.gui.vending;
 
 import edu.gti.asd.gui.vending.model.MachineCoin;
+import edu.gti.asd.gui.vending.model.MachineCoinsStock;
 import edu.gti.asd.gui.vending.model.MachineCredit;
 import edu.gti.asd.gui.vending.model.MachineProduct;
 import edu.gti.asd.gui.vending.model.MachineSelectedProduct;
@@ -16,12 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class VendingMachine extends javax.swing.JFrame {
 
-    public static MachineCoin coin10c;
-    public static MachineCoin coin20c;
-    public static MachineCoin coin50c;
-    public static MachineCoin coin1e;
-    public static MachineCoin coin2e;
-
+    public static MachineCoinsStock coinStock;
 
     public static MachineProduct productCoca;
     public static MachineProduct product7up;
@@ -60,6 +56,8 @@ public class VendingMachine extends javax.swing.JFrame {
         jLabel20c = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10c = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabelTotalMoney = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabelSelected = new javax.swing.JLabel();
@@ -148,6 +146,15 @@ public class VendingMachine extends javax.swing.JFrame {
         jLabel10c.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10c.setText("0");
 
+        jLabel8.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Total $");
+        jLabel8.setToolTipText("");
+        jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jLabelTotalMoney.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTotalMoney.setText("0");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -171,9 +178,13 @@ public class VendingMachine extends javax.swing.JFrame {
                     .addComponent(jLabel1e, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2e, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2e, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                    .addComponent(jLabelTotalMoney, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,14 +197,16 @@ public class VendingMachine extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3)
                         .addComponent(jLabel5)
-                        .addComponent(jLabel6)))
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel8)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10c)
                     .addComponent(jLabel20c)
                     .addComponent(jLabel50c)
                     .addComponent(jLabel1e)
-                    .addComponent(jLabel2e))
+                    .addComponent(jLabel2e)
+                    .addComponent(jLabelTotalMoney))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -497,7 +510,7 @@ public class VendingMachine extends javax.swing.JFrame {
                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(110, 110, 110))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(159, 159, 159)
+                .addGap(78, 78, 78)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -528,11 +541,7 @@ public class VendingMachine extends javax.swing.JFrame {
     } 
     
     private void clearCoinsStock() {
-        coin10c.resetStock();
-        coin20c.resetStock();
-        coin50c.resetStock();
-        coin1e.resetStock();
-        coin2e.resetStock();
+        coinStock.reset();
     }
     
     private void clearProductsStock() {
@@ -540,6 +549,10 @@ public class VendingMachine extends javax.swing.JFrame {
         product7up.resetStock();
         productFanta.resetStock();
         productSchweps.resetStock();
+    }
+    
+    private double calculateTotalMoneyInStock() {        
+        return coinStock.calculateTotalMoneyInStock();
     }
     
     
@@ -597,11 +610,13 @@ public class VendingMachine extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonPayActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        coin10c = new MachineCoin("10c", 0.1, 0, jLabel10c);
-        coin20c = new MachineCoin("20c", 0.2, 0, jLabel20c);
-        coin50c = new MachineCoin("50c", 0.5, 0, jLabel50c);
-        coin1e = new MachineCoin("1e", 1, 0, jLabel1e);
-        coin2e = new MachineCoin("2e", 2, 0, jLabel2e);
+        MachineCoin coin10c = new MachineCoin("10c", 0.1, 0, jLabel10c);
+        MachineCoin coin20c = new MachineCoin("20c", 0.2, 0, jLabel20c);
+        MachineCoin coin50c = new MachineCoin("50c", 0.5, 0, jLabel50c);
+        MachineCoin coin1e = new MachineCoin("1e", 1, 0, jLabel1e);
+        MachineCoin coin2e = new MachineCoin("2e", 2, 0, jLabel2e);
+        
+        coinStock = new MachineCoinsStock(coin10c, coin20c, coin50c, coin1e, coin2e, jLabelTotalMoney);
         
         productCoca = new MachineProduct("Coca", 2.8, 0, jLabelCoca);
         product7up = new MachineProduct("7up", 2.7, 0, jLabel7up);
@@ -733,6 +748,7 @@ public class VendingMachine extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel7up;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelCoca;
     private javax.swing.JLabel jLabelCredit;
@@ -740,6 +756,7 @@ public class VendingMachine extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPrice;
     private javax.swing.JLabel jLabelSchweps;
     private javax.swing.JLabel jLabelSelected;
+    private javax.swing.JLabel jLabelTotalMoney;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -769,12 +786,11 @@ public class VendingMachine extends javax.swing.JFrame {
     }
 
     private void hideCoinsStock() {
-        coin10c.hideStock();
-        coin20c.hideStock();
-        coin50c.hideStock();
-        coin1e.hideStock();
-        coin2e.hideStock();
-
+        coinStock.getCoin10c().hideStock();
+        coinStock.getCoin20c().hideStock();
+        coinStock.getCoin50c().hideStock();
+        coinStock.getCoin1e().hideStock();
+        coinStock.getCoin2e().hideStock();
     }
 
     private void showProductsStock() {
@@ -785,11 +801,10 @@ public class VendingMachine extends javax.swing.JFrame {
     }
 
     private void showCoinsStock() {
-        coin10c.showStock();
-        coin20c.showStock();
-        coin50c.showStock();
-        coin1e.showStock();
-        coin2e.showStock();
-
+        coinStock.getCoin10c().showStock();
+        coinStock.getCoin20c().showStock();
+        coinStock.getCoin50c().showStock();
+        coinStock.getCoin1e().showStock();
+        coinStock.getCoin2e().showStock();
     }
 }

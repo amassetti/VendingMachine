@@ -301,16 +301,12 @@ public class AdminAddCoins extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2eFocusLost
 
     private void jButtonAddMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddMoneyActionPerformed
-//        VendingMachine.stock_q10c = VendingMachine.stock_q10c + q10c;
-//        VendingMachine.stock_q20c = VendingMachine.stock_q20c + q20c;
-//        VendingMachine.stock_q50c = VendingMachine.stock_q50c + q50c;
-//        VendingMachine.stock_q1e = VendingMachine.stock_q1e + q1e;
-//        VendingMachine.stock_q2e = VendingMachine.stock_q2e + q2e;
-        VendingMachine.coin10c.incrementStock(q10c);
-        VendingMachine.coin20c.incrementStock(q20c);
-        VendingMachine.coin50c.incrementStock(q50c);
-        VendingMachine.coin1e.incrementStock(q1e);
-        VendingMachine.coin2e.incrementStock(q2e);
+        VendingMachine.coinStock.getCoin10c().incrementStock(q10c);
+        VendingMachine.coinStock.getCoin20c().incrementStock(q20c);
+        VendingMachine.coinStock.getCoin50c().incrementStock(q50c);
+        VendingMachine.coinStock.getCoin1e().incrementStock(q1e);
+        VendingMachine.coinStock.getCoin2e().incrementStock(q2e);
+        VendingMachine.coinStock.calculateTotalMoneyInStock();
         dispose();
     }//GEN-LAST:event_jButtonAddMoneyActionPerformed
 
