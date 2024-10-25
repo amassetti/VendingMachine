@@ -9,6 +9,8 @@ import edu.gti.asd.gui.vending.model.MachineCoinsStock;
 import edu.gti.asd.gui.vending.model.MachineCredit;
 import edu.gti.asd.gui.vending.model.MachineProduct;
 import edu.gti.asd.gui.vending.model.MachineSelectedProduct;
+import edu.gti.asd.gui.vending.utils.ChangeUtil;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -214,10 +216,12 @@ public class VendingMachine extends javax.swing.JFrame {
 
         jLabel7.setText("Selected:");
 
+        jLabelSelected.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelSelected.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel9.setText("Price:");
 
+        jLabelPrice.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -598,8 +602,17 @@ public class VendingMachine extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Enjoy your " + selectedProduct.getSelectedProduct().getProductName() + "!!!");
         } else {
             // Give change
+            List<Double> coinsToGive = ChangeUtil.calculateCoinsToGive(difference);
+            if (ChangeUtil.checkCoinsStock(coinsToGive, coinStock)) {
+                ChangeUtil.updateStock(coinsToGive, coinStock);
+                selectedProduct.getSelectedProduct().decrementStock(1);
+                JOptionPane.showMessageDialog(this, "Get your change ["+ coinsToGive +"] and enjoy your " + selectedProduct.getSelectedProduct().getProductName() + "!!!");
+                
+            } else {
+                JOptionPane.showMessageDialog(this, "Don't have the coins to give your change. Cancelling purchase...");
+            }
             
-            JOptionPane.showMessageDialog(this, "Get your change and enjoy your " + selectedProduct.getSelectedProduct().getProductName() + "!!!");
+            
         }
         
         

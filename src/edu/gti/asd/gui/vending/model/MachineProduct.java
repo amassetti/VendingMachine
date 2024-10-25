@@ -48,6 +48,11 @@ public class MachineProduct {
         setQuantity(this.quantity + quantity);
     }
     
+    public void decrementStock(int quantity) {
+        setQuantity(this.quantity - quantity);
+    }
+
+    
     public void resetStock() {
         this.quantity = 0;
         quantityLabel.setText(""+quantity);

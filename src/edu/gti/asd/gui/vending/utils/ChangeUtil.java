@@ -65,4 +65,21 @@ public class ChangeUtil {
         return enoughCoinsToGiveChange;
     }
     
+    public static void updateStock(List<Double>coinsToGive, MachineCoinsStock coinsStock) {
+        
+        // Using streams to easily count
+        int quantity2e = (int) coinsToGive.stream().filter( coin -> coin == 2d).count();
+        int quantity1e = (int) coinsToGive.stream().filter( coin -> coin == 1d).count();
+        int quantity50c = (int) coinsToGive.stream().filter( coin -> coin == 0.50).count();
+        int quantity20c = (int) coinsToGive.stream().filter( coin -> coin == 0.20).count();
+        int quantity10c = (int) coinsToGive.stream().filter( coin -> coin == 0.10).count();
+
+        coinsStock.getCoin2e().decrementStock(quantity2e);
+        coinsStock.getCoin1e().decrementStock(quantity1e);
+        coinsStock.getCoin50c().decrementStock(quantity50c);
+        coinsStock.getCoin20c().decrementStock(quantity20c);
+        coinsStock.getCoin10c().decrementStock(quantity10c);
+        
+    }
+    
 }
