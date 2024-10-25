@@ -216,11 +216,16 @@ public class VendingMachine extends javax.swing.JFrame {
 
         jLabel7.setText("Selected:");
 
+        jLabelSelected.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelSelected.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jLabelSelected.setForeground(new java.awt.Color(255, 0, 0));
         jLabelSelected.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelSelected.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel9.setText("Price:");
 
+        jLabelPrice.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jLabelPrice.setForeground(new java.awt.Color(255, 0, 0));
         jLabelPrice.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -255,6 +260,8 @@ public class VendingMachine extends javax.swing.JFrame {
 
         jLabel1.setText("Credit:");
 
+        jLabelCredit.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jLabelCredit.setForeground(new java.awt.Color(255, 0, 0));
         jLabelCredit.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelCredit.setText("0");
         jLabelCredit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));

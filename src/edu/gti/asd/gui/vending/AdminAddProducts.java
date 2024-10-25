@@ -41,6 +41,16 @@ public class AdminAddProducts extends javax.swing.JFrame {
         jTextFieldPrice7up = new javax.swing.JTextField();
         jTextFieldPriceFanta = new javax.swing.JTextField();
         jTextFieldPriceSchweps = new javax.swing.JTextField();
+        jButtonAddCoke = new javax.swing.JButton();
+        jButtonSubstractCoke = new javax.swing.JButton();
+        jButtonAdd7Up = new javax.swing.JButton();
+        jButtonAddFanta = new javax.swing.JButton();
+        jButtonAddSchweps = new javax.swing.JButton();
+        jButtonSubstract7Up = new javax.swing.JButton();
+        jButtonSubstractFanta = new javax.swing.JButton();
+        jButtonSubstractSchweps = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -81,24 +91,37 @@ public class AdminAddProducts extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldAddCoca.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jTextFieldAddCoca.setText("0");
         jTextFieldAddCoca.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldAddCocaKeyTyped(evt);
             }
         });
 
+        jTextField7up.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jTextField7up.setText("0");
+        jTextField7up.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7upActionPerformed(evt);
+            }
+        });
         jTextField7up.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField7upKeyTyped(evt);
             }
         });
 
+        jTextFieldFanta.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jTextFieldFanta.setText("0");
         jTextFieldFanta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldFantaKeyTyped(evt);
             }
         });
 
+        jTextFieldSchweps.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jTextFieldSchweps.setText("0");
         jTextFieldSchweps.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldSchwepsKeyTyped(evt);
@@ -136,66 +159,154 @@ public class AdminAddProducts extends javax.swing.JFrame {
             }
         });
 
+        jButtonAddCoke.setText("+");
+        jButtonAddCoke.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddCokeActionPerformed(evt);
+            }
+        });
+
+        jButtonSubstractCoke.setText("-");
+        jButtonSubstractCoke.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSubstractCokeActionPerformed(evt);
+            }
+        });
+
+        jButtonAdd7Up.setText("+");
+        jButtonAdd7Up.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAdd7UpActionPerformed(evt);
+            }
+        });
+
+        jButtonAddFanta.setText("+");
+        jButtonAddFanta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddFantaActionPerformed(evt);
+            }
+        });
+
+        jButtonAddSchweps.setText("+");
+        jButtonAddSchweps.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddSchwepsActionPerformed(evt);
+            }
+        });
+
+        jButtonSubstract7Up.setText("-");
+        jButtonSubstract7Up.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSubstract7UpActionPerformed(evt);
+            }
+        });
+
+        jButtonSubstractFanta.setText("-");
+        jButtonSubstractFanta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSubstractFantaActionPerformed(evt);
+            }
+        });
+
+        jButtonSubstractSchweps.setText("-");
+        jButtonSubstractSchweps.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSubstractSchwepsActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Quantity");
+
+        jLabel2.setText("Price");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonAddStock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jToggleButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButtonAddCoke)
+                            .addComponent(jButtonAdd7Up)
+                            .addComponent(jButtonAddFanta)
+                            .addComponent(jButtonAddSchweps))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField7up, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldAddCoca, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldFanta, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldSchweps))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldAddCoca, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField7up, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldFanta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldSchweps, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonSubstractCoke)
+                            .addComponent(jButtonSubstract7Up)
+                            .addComponent(jButtonSubstractFanta)
+                            .addComponent(jButtonSubstractSchweps))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldPriceFanta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                            .addComponent(jTextFieldPriceFanta, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextFieldPriceCoca, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextFieldPriceSchweps, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextFieldPrice7up)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(jButtonAddStock, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(92, 92, 92))
+                            .addComponent(jTextFieldPrice7up, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(41, 41, 41))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(189, 189, 189)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(63, 63, 63))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldAddCoca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldPriceCoca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldPriceCoca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAddCoke)
+                    .addComponent(jButtonSubstractCoke))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField7up, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldPrice7up, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                    .addComponent(jTextFieldPrice7up, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAdd7Up)
+                    .addComponent(jButtonSubstract7Up))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldFanta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldPriceFanta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldPriceFanta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAddFanta)
+                    .addComponent(jButtonSubstractFanta))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldSchweps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldPriceSchweps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldPriceSchweps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAddSchweps)
+                    .addComponent(jButtonSubstractSchweps))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonAddStock, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         pack();
@@ -276,6 +387,46 @@ public class AdminAddProducts extends javax.swing.JFrame {
         JTextFieldUtils.onlyDigitsOnKeyTyped(evt);
     }//GEN-LAST:event_jTextFieldSchwepsKeyTyped
 
+    private void jTextField7upActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7upActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7upActionPerformed
+
+    private void jButtonAddCokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddCokeActionPerformed
+        jTextFieldAddCoca.setText(""+ (Integer.parseInt(jTextFieldAddCoca.getText()) + 1));
+    }//GEN-LAST:event_jButtonAddCokeActionPerformed
+
+    private void jButtonSubstractCokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubstractCokeActionPerformed
+        if (Integer.parseInt(jTextFieldAddCoca.getText()) > 0)
+            jTextFieldAddCoca.setText(""+ (Integer.parseInt(jTextFieldAddCoca.getText()) - 1));
+    }//GEN-LAST:event_jButtonSubstractCokeActionPerformed
+
+    private void jButtonAdd7UpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdd7UpActionPerformed
+        jTextField7up.setText(""+ (Integer.parseInt(jTextField7up.getText()) + 1));
+    }//GEN-LAST:event_jButtonAdd7UpActionPerformed
+
+    private void jButtonAddFantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddFantaActionPerformed
+        jTextFieldFanta.setText(""+ (Integer.parseInt(jTextFieldFanta.getText()) + 1));
+    }//GEN-LAST:event_jButtonAddFantaActionPerformed
+
+    private void jButtonAddSchwepsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddSchwepsActionPerformed
+        jTextFieldSchweps.setText(""+ (Integer.parseInt(jTextFieldSchweps.getText()) + 1));
+    }//GEN-LAST:event_jButtonAddSchwepsActionPerformed
+
+    private void jButtonSubstract7UpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubstract7UpActionPerformed
+        if (Integer.parseInt(jTextField7up.getText()) > 0)
+            jTextField7up.setText(""+ (Integer.parseInt(jTextField7up.getText()) - 1));
+    }//GEN-LAST:event_jButtonSubstract7UpActionPerformed
+
+    private void jButtonSubstractFantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubstractFantaActionPerformed
+        if (Integer.parseInt(jTextFieldFanta.getText()) > 0)
+            jTextFieldFanta.setText(""+ (Integer.parseInt(jTextFieldFanta.getText()) - 1));
+    }//GEN-LAST:event_jButtonSubstractFantaActionPerformed
+
+    private void jButtonSubstractSchwepsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubstractSchwepsActionPerformed
+        if (Integer.parseInt(jTextFieldSchweps.getText()) > 0)
+            jTextFieldSchweps.setText(""+ (Integer.parseInt(jTextFieldSchweps.getText()) - 1));
+    }//GEN-LAST:event_jButtonSubstractSchwepsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -312,7 +463,17 @@ public class AdminAddProducts extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAdd7Up;
+    private javax.swing.JButton jButtonAddCoke;
+    private javax.swing.JButton jButtonAddFanta;
+    private javax.swing.JButton jButtonAddSchweps;
     private javax.swing.JButton jButtonAddStock;
+    private javax.swing.JButton jButtonSubstract7Up;
+    private javax.swing.JButton jButtonSubstractCoke;
+    private javax.swing.JButton jButtonSubstractFanta;
+    private javax.swing.JButton jButtonSubstractSchweps;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField7up;
     private javax.swing.JTextField jTextFieldAddCoca;
     private javax.swing.JTextField jTextFieldFanta;

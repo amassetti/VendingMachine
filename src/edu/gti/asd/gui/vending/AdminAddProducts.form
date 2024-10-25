@@ -26,78 +26,108 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jButtonAddStock" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jToggleButton4" min="-2" pref="76" max="-2" attributes="0"/>
                           <Component id="jToggleButton3" min="-2" pref="76" max="-2" attributes="0"/>
                           <Component id="jToggleButton2" min="-2" pref="76" max="-2" attributes="0"/>
                           <Component id="jToggleButton1" min="-2" pref="76" max="-2" attributes="0"/>
+                          <Component id="jToggleButton4" alignment="0" min="-2" pref="76" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jButtonAddCoke" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonAdd7Up" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonAddFanta" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonAddSchweps" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jTextField7up" alignment="1" min="-2" pref="75" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldAddCoca" alignment="1" min="-2" pref="75" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jTextFieldAddCoca" min="-2" pref="75" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="33" pref="33" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextFieldFanta" pref="75" max="32767" attributes="0"/>
-                                  <Component id="jTextFieldSchweps" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextField7up" alignment="1" min="-2" pref="75" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldFanta" alignment="1" min="-2" pref="75" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldSchweps" alignment="1" min="-2" pref="75" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="56" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jButtonSubstractCoke" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonSubstract7Up" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonSubstractFanta" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonSubstractSchweps" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="67" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jTextFieldPriceFanta" alignment="1" pref="76" max="32767" attributes="0"/>
+                          <Component id="jTextFieldPriceFanta" alignment="1" max="32767" attributes="0"/>
                           <Component id="jTextFieldPriceCoca" alignment="1" max="32767" attributes="0"/>
                           <Component id="jTextFieldPriceSchweps" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jTextFieldPrice7up" max="32767" attributes="0"/>
+                          <Component id="jTextFieldPrice7up" min="-2" pref="76" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                      <Component id="jButtonAddStock" min="-2" pref="239" max="-2" attributes="0"/>
-                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jToggleButton1" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                   <Component id="jTextFieldAddCoca" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldPriceCoca" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonAddCoke" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonSubstractCoke" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jToggleButton2" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                   <Component id="jTextField7up" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldPrice7up" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonAdd7Up" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonSubstract7Up" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jToggleButton3" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                   <Component id="jTextFieldFanta" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldPriceFanta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonAddFanta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonSubstractFanta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jToggleButton4" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                   <Component id="jTextFieldSchweps" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldPriceSchweps" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonAddSchweps" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonSubstractSchweps" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jButtonAddStock" min="-2" pref="57" max="-2" attributes="0"/>
-              <EmptySpace pref="30" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -140,21 +170,38 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldAddCoca">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="11"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldAddCocaKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField7up">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="11"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField7upActionPerformed"/>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField7upKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldFanta">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="11"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldFantaKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldSchweps">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="11"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldSchwepsKeyTyped"/>
       </Events>
@@ -186,6 +233,80 @@
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldPriceSchwepsKeyTyped"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonAddCoke">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="+"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAddCokeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonSubstractCoke">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSubstractCokeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonAdd7Up">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="+"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAdd7UpActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonAddFanta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="+"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAddFantaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonAddSchweps">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="+"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAddSchwepsActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonSubstract7Up">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSubstract7UpActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonSubstractFanta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSubstractFantaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonSubstractSchweps">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSubstractSchwepsActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quantity"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Price"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
