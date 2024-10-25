@@ -4,7 +4,7 @@
  */
 package edu.gti.asd.gui.vending;
 
-import edu.gti.asd.gui.vending.newpackage.utils.JTextFieldUtils;
+import edu.gti.asd.gui.vending.utils.JTextFieldUtils;
 
 /**
  *

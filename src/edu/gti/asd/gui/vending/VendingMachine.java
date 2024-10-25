@@ -598,6 +598,7 @@ public class VendingMachine extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Enjoy your " + selectedProduct.getSelectedProduct().getProductName() + "!!!");
         } else {
             // Give change
+            
             JOptionPane.showMessageDialog(this, "Get your change and enjoy your " + selectedProduct.getSelectedProduct().getProductName() + "!!!");
         }
         
