@@ -82,9 +82,6 @@ public class VendingMachine extends javax.swing.JFrame {
         jButtonPay = new javax.swing.JButton();
         jButtonCancel = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItemExit = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
         Admin = new javax.swing.JMenu();
         jMenuItemAddCoins = new javax.swing.JMenuItem();
         jMenuItemAddStock = new javax.swing.JMenuItem();
@@ -93,6 +90,7 @@ public class VendingMachine extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jCheckBoxMenuItemShowProductStock = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItemShowCoinsStock = new javax.swing.JCheckBoxMenuItem();
+        jMenuItemExit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vending Machine");
@@ -237,12 +235,12 @@ public class VendingMachine extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelSelected, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelSelected, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -433,23 +431,10 @@ public class VendingMachine extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("File");
-
-        jMenuItemExit.setText("Exit");
-        jMenuItemExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemExitActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItemExit);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
+        Admin.setMnemonic('A');
         Admin.setText("Admin");
 
+        jMenuItemAddCoins.setMnemonic('C');
         jMenuItemAddCoins.setText("Add Coins");
         jMenuItemAddCoins.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -458,6 +443,7 @@ public class VendingMachine extends javax.swing.JFrame {
         });
         Admin.add(jMenuItemAddCoins);
 
+        jMenuItemAddStock.setMnemonic('P');
         jMenuItemAddStock.setText("Add Products");
         jMenuItemAddStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -467,6 +453,7 @@ public class VendingMachine extends javax.swing.JFrame {
         Admin.add(jMenuItemAddStock);
         Admin.add(jSeparator1);
 
+        jMenuItemClearAll.setMnemonic('a');
         jMenuItemClearAll.setText("Clear all");
         jMenuItemClearAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -499,6 +486,15 @@ public class VendingMachine extends javax.swing.JFrame {
         });
         Admin.add(jCheckBoxMenuItemShowCoinsStock);
 
+        jMenuItemExit.setMnemonic('x');
+        jMenuItemExit.setText("Exit");
+        jMenuItemExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemExitActionPerformed(evt);
+            }
+        });
+        Admin.add(jMenuItemExit);
+
         jMenuBar1.add(Admin);
 
         setJMenuBar(jMenuBar1);
@@ -515,11 +511,12 @@ public class VendingMachine extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(53, 53, 53))))
         );
         layout.setVerticalGroup(
@@ -530,11 +527,11 @@ public class VendingMachine extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
+                        .addGap(18, 18, 18)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(28, 28, 28)
+                .addGap(34, 34, 34)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -636,7 +633,7 @@ public class VendingMachine extends javax.swing.JFrame {
         
         coinStock = new MachineCoinsStock(coin10c, coin20c, coin50c, coin1e, coin2e, jLabelTotalMoney);
         
-        productCoca = new MachineProduct("Coca", 2.8, 0, jLabelCoca);
+        productCoca = new MachineProduct("Coke", 2.8, 0, jLabelCoca);
         product7up = new MachineProduct("7up", 2.7, 0, jLabel7up);
         productFanta = new MachineProduct("Fanta", 1.8, 0, jLabelFanta);
         productSchweps = new MachineProduct("Schweps",3.2, 0, jLabelSchweps);
@@ -684,10 +681,6 @@ public class VendingMachine extends javax.swing.JFrame {
         clearAllStock();
     }//GEN-LAST:event_jMenuItemClearAllActionPerformed
 
-    private void jMenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExitActionPerformed
-        dispose();
-    }//GEN-LAST:event_jMenuItemExitActionPerformed
-
     private void jCheckBoxMenuItemShowProductStockStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemShowProductStockStateChanged
     
     }//GEN-LAST:event_jCheckBoxMenuItemShowProductStockStateChanged
@@ -709,6 +702,10 @@ public class VendingMachine extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jCheckBoxMenuItemShowCoinsStockActionPerformed
+
+    private void jMenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExitActionPerformed
+        dispose();
+    }//GEN-LAST:event_jMenuItemExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -775,8 +772,6 @@ public class VendingMachine extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelSchweps;
     private javax.swing.JLabel jLabelSelected;
     private javax.swing.JLabel jLabelTotalMoney;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemAddCoins;
     private javax.swing.JMenuItem jMenuItemAddStock;

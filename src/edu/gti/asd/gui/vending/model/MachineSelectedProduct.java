@@ -32,7 +32,12 @@ public class MachineSelectedProduct {
     public void setSelectedProduct(MachineProduct selectedProduct) {
         this.selectedProduct = selectedProduct;
         if (this.selectedProduct != null) {
-            labelSelectedName.setText(this.selectedProduct.getProductName());
+            if (this.selectedProduct.getQuantity() > 0) {
+                labelSelectedName.setText(this.selectedProduct.getProductName());
+            } else {
+                labelSelectedName.setText("NO STOCK OF " + this.selectedProduct.getProductName());
+            }
+            
             labelSelectedPrice.setText("" + this.selectedProduct.getPrice());
         } else {
             labelSelectedName.setText("");

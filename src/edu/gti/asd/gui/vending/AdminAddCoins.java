@@ -4,6 +4,8 @@
  */
 package edu.gti.asd.gui.vending;
 
+import edu.gti.asd.gui.vending.utils.JTextFieldUtils;
+
 /**
  *
  * @author ariel
@@ -86,10 +88,20 @@ public class AdminAddCoins extends javax.swing.JFrame {
                 jTextField2eActionPerformed(evt);
             }
         });
+        jTextField2e.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2eKeyTyped(evt);
+            }
+        });
 
         jTextField1e.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jTextField1eFocusLost(evt);
+            }
+        });
+        jTextField1e.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1eKeyTyped(evt);
             }
         });
 
@@ -112,6 +124,11 @@ public class AdminAddCoins extends javax.swing.JFrame {
                 jTextField50cFocusLost(evt);
             }
         });
+        jTextField50c.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField50cKeyTyped(evt);
+            }
+        });
 
         jButton20c.setText("20c");
         jButton20c.addActionListener(new java.awt.event.ActionListener() {
@@ -130,6 +147,11 @@ public class AdminAddCoins extends javax.swing.JFrame {
                 jTextField20cActionPerformed(evt);
             }
         });
+        jTextField20c.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField20cKeyTyped(evt);
+            }
+        });
 
         jButton10c.setText("10c");
         jButton10c.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +163,11 @@ public class AdminAddCoins extends javax.swing.JFrame {
         jTextField10c.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jTextField10cFocusLost(evt);
+            }
+        });
+        jTextField10c.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField10cKeyTyped(evt);
             }
         });
 
@@ -313,6 +340,26 @@ public class AdminAddCoins extends javax.swing.JFrame {
     private void jTextField2eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2eActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2eActionPerformed
+
+    private void jTextField10cKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField10cKeyTyped
+        JTextFieldUtils.onlyDigitsOnKeyTyped(evt);
+    }//GEN-LAST:event_jTextField10cKeyTyped
+
+    private void jTextField20cKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField20cKeyTyped
+        JTextFieldUtils.onlyDigitsOnKeyTyped(evt);
+    }//GEN-LAST:event_jTextField20cKeyTyped
+
+    private void jTextField50cKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField50cKeyTyped
+        JTextFieldUtils.onlyDigitsOnKeyTyped(evt);
+    }//GEN-LAST:event_jTextField50cKeyTyped
+
+    private void jTextField1eKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1eKeyTyped
+        JTextFieldUtils.onlyDigitsOnKeyTyped(evt);
+    }//GEN-LAST:event_jTextField1eKeyTyped
+
+    private void jTextField2eKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2eKeyTyped
+        JTextFieldUtils.onlyDigitsOnKeyTyped(evt);
+    }//GEN-LAST:event_jTextField2eKeyTyped
 
     /**
      * @param args the command line arguments
