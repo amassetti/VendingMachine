@@ -5,6 +5,7 @@
 package edu.gti.asd.gui.vending;
 
 import edu.gti.asd.gui.vending.utils.JTextFieldUtils;
+import edu.gti.asd.gui.vending.utils.Logger;
 
 /**
  *
@@ -328,6 +329,7 @@ public class AdminAddCoins extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2eFocusLost
 
     private void jButtonAddMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddMoneyActionPerformed
+        Logger.info("AdminAddCoins.jButtonAddMoneyActionPerformed", "Adding stock of coins into machine...");
         VendingMachine.coinStock.getCoin10c().incrementStock(q10c);
         VendingMachine.coinStock.getCoin20c().incrementStock(q20c);
         VendingMachine.coinStock.getCoin50c().incrementStock(q50c);

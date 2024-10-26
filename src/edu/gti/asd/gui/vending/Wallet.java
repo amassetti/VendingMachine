@@ -184,9 +184,8 @@ public class Wallet extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void updateMoney() {
-        
         moneyToAdd = (q10c*0.10)+(q20c*0.20)+(q50c*0.50)+(q1e*1d)+(q2e*2d);
-        Logger.info("Wallet", "Money to add: " + moneyToAdd);
+        Logger.info("Wallet.updateMoney", "Money to add: " + moneyToAdd);
         jTextFieldTotalToAdd.setText(""+moneyToAdd);
     }
     
@@ -243,7 +242,7 @@ public class Wallet extends javax.swing.JFrame {
         VendingMachine.credit.addCoins1e(q1e);
         VendingMachine.credit.addCoins2e(q2e);
         VendingMachine.credit.calculateCredit();
-        System.out.println("moneyToAdd: " + moneyToAdd);
+        Logger.info("Wallet.jButtonAddMoneyActionPerformed" , "moneyToAdd: " + moneyToAdd);
         dispose();
     }//GEN-LAST:event_jButtonAddMoneyActionPerformed
 

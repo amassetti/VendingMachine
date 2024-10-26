@@ -5,6 +5,7 @@
 package edu.gti.asd.gui.vending;
 
 import edu.gti.asd.gui.vending.utils.JTextFieldUtils;
+import edu.gti.asd.gui.vending.utils.Logger;
 
 /**
  *
@@ -329,6 +330,7 @@ public class AdminAddProducts extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     private void jButtonAddStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddStockActionPerformed
+        Logger.info("AdminAddProducts.jButtonAddStockActionPerformed", "Adding products into machine stock...");
         int quantityCoca = Integer.parseInt(jTextFieldAddCoca.getText());
         int quantity7up = Integer.parseInt(jTextField7up.getText());
         int quantityFanta = Integer.parseInt(jTextFieldFanta.getText());

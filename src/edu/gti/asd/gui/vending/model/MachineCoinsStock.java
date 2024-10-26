@@ -4,6 +4,7 @@
  */
 package edu.gti.asd.gui.vending.model;
 
+import edu.gti.asd.gui.vending.utils.Logger;
 import javax.swing.JLabel;
 
 /**
@@ -36,6 +37,7 @@ public class MachineCoinsStock {
         this.coin1e = coin1e;
         this.coin2e = coin2e;
         this.totalMoneyLabel = totalMoneyLabel;
+        Logger.info("MachineCoinsStock", "Creating object: " + this.toString());
     }
 
     public MachineCoin getCoin10c() {
@@ -121,7 +123,7 @@ public class MachineCoinsStock {
     
     @Override
     public String toString() {
-        return "MachineCoinsStock{" + "coin10c=" + coin10c + ", coin20c=" + coin20c + ", coin50c=" + coin50c + ", coin1e=" + coin1e + ", coin2e=" + coin2e + ", totalMoneyLabel=" + totalMoneyLabel + ", totalMoney=" + totalMoney + '}';
+        return "MachineCoinsStock{" + "coin10c=" + coin10c + ", coin20c=" + coin20c + ", coin50c=" + coin50c + ", coin1e=" + coin1e + ", coin2e=" + coin2e + ", totalMoneyLabel=JLabel" +  ", totalMoney=" + totalMoney + '}';
     }
 
 }

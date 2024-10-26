@@ -15,7 +15,7 @@ import java.util.List;
 public class ChangeUtil {
     
     public static List<Double> calculateCoinsToGive(double change) {
-        
+        Logger.info("ChangeUtil.calculateCoinsToGive", "Calculating coins to give for a change of " + change);
         // TODO take into account the stock of coins
         List<Double> listOfCoins = new ArrayList();
         int rest = Double.valueOf(change*10).intValue();
@@ -45,6 +45,7 @@ public class ChangeUtil {
     }
     
     public static boolean checkCoinsStock(List<Double>coinsToGive, MachineCoinsStock coinsStock) {
+        Logger.info("ChangeUtil.checkCoinsStock", "Checking if there are coins to give change. Coins to give: " + coinsToGive);
         if (coinsStock == null) return false;
         
         // Using streams to easily count
@@ -66,7 +67,7 @@ public class ChangeUtil {
     }
     
     public static void updateStock(List<Double>coinsToGive, MachineCoinsStock coinsStock) {
-        
+        Logger.info("ChangeUtil.updateStock", "Updating stock of coins in machine. Coins to give: " + coinsToGive);
         // Using streams to easily count
         int quantity2e = (int) coinsToGive.stream().filter( coin -> coin == 2d).count();
         int quantity1e = (int) coinsToGive.stream().filter( coin -> coin == 1d).count();

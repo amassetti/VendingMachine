@@ -4,6 +4,7 @@
  */
 package edu.gti.asd.gui.vending.model;
 
+import edu.gti.asd.gui.vending.utils.Logger;
 import java.util.Locale;
 import javax.swing.JLabel;
 
@@ -25,6 +26,7 @@ public class MachineCoin {
         this.value = value;
         this.quantity = quantity;
         this.quantityLabel = quantityLabel;
+        Logger.info("MachineCoin", "Object created: " + this.toString());
     }
     
 

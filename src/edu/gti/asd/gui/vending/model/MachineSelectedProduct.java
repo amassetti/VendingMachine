@@ -4,6 +4,7 @@
  */
 package edu.gti.asd.gui.vending.model;
 
+import edu.gti.asd.gui.vending.utils.Logger;
 import javax.swing.JLabel;
 import javax.swing.JToggleButton;
 
@@ -30,6 +31,7 @@ public class MachineSelectedProduct {
     }
 
     public void setSelectedProduct(MachineProduct selectedProduct) {
+        Logger.info("MachineSelectedProduct.setSelectedProduct", "Selecting product: " + selectedProduct);
         this.selectedProduct = selectedProduct;
         if (this.selectedProduct != null) {
             if (this.selectedProduct.getQuantity() > 0) {

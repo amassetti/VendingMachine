@@ -10,6 +10,7 @@ import edu.gti.asd.gui.vending.model.MachineCredit;
 import edu.gti.asd.gui.vending.model.MachineProduct;
 import edu.gti.asd.gui.vending.model.MachineSelectedProduct;
 import edu.gti.asd.gui.vending.utils.ChangeUtil;
+import edu.gti.asd.gui.vending.utils.Logger;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -573,6 +574,7 @@ public class VendingMachine extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemAddCoinsActionPerformed
 
     private void jButtonPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPayActionPerformed
+        Logger.info("VendingMachine.jButtonPayActionPerformed", "Starting payment");
         if (selectedProduct != null && selectedProduct.getSelectedProduct() == null) {
             JOptionPane.showMessageDialog(this, "You must select a product first");
             return;
@@ -616,15 +618,13 @@ public class VendingMachine extends javax.swing.JFrame {
             
         }
         
-        
-        // Update stock
-        
         // Resert credit and selected product
         credit.reset();
         selectedProduct.reset();
     }//GEN-LAST:event_jButtonPayActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        Logger.info("VendingMachine.formWindowOpened", "Initializing components...");
         MachineCoin coin10c = new MachineCoin("10c", 0.1, 0, jLabel10c);
         MachineCoin coin20c = new MachineCoin("20c", 0.2, 0, jLabel20c);
         MachineCoin coin50c = new MachineCoin("50c", 0.5, 0, jLabel50c);
@@ -678,7 +678,11 @@ public class VendingMachine extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButtonSchwepsActionPerformed
 
     private void jMenuItemClearAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClearAllActionPerformed
-        clearAllStock();
+        int confirmation = JOptionPane.showConfirmDialog(this, "Are you sure you want to clear all stock (coins and products) from machine?");
+        if (confirmation == 0) {
+            clearAllStock();
+        }
+        
     }//GEN-LAST:event_jMenuItemClearAllActionPerformed
 
     private void jCheckBoxMenuItemShowProductStockStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemShowProductStockStateChanged
