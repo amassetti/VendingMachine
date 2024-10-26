@@ -4,6 +4,8 @@
  */
 package edu.gti.asd.gui.vending;
 
+import edu.gti.asd.gui.vending.utils.Logger;
+
 /**
  *
  * @author ariel
@@ -182,7 +184,9 @@ public class Wallet extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void updateMoney() {
-        moneyToAdd = (q10c*0.1)+(q20c*0.2)+(q50c*0.5)+(q1e*1)+(q2e*2);
+        
+        moneyToAdd = (q10c*0.10)+(q20c*0.20)+(q50c*0.50)+(q1e*1d)+(q2e*2d);
+        Logger.info("Wallet", "Money to add: " + moneyToAdd);
         jTextFieldTotalToAdd.setText(""+moneyToAdd);
     }
     
