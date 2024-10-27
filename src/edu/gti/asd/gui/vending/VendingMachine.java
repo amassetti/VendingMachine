@@ -600,22 +600,24 @@ public class VendingMachine extends javax.swing.JFrame {
         }
         
         // Check change
-        //double difference = credit.getCredit() - selectedProduct.getSelectedProduct().getPrice();
         BigDecimal difference = credit.getCredit().subtract(BigDecimal.valueOf(selectedProduct.getSelectedProduct().getPrice()));
         
         if (difference.equals(BigDecimal.ZERO)) {
-            // OK
+            selectedProduct.getSelectedProduct().decrementStock(1);
             JOptionPane.showMessageDialog(this, "Enjoy your " + selectedProduct.getSelectedProduct().getProductName() + "!!!");
         } else {
             // Give change
             List<Double> coinsToGive = ChangeUtil.calculateCoinsToGive(difference.doubleValue());
             if (ChangeUtil.checkCoinsStock(coinsToGive, coinStock)) {
                 ChangeUtil.updateStock(coinsToGive, coinStock);
+                coinStock.calculateTotalMoneyInStock();
                 selectedProduct.getSelectedProduct().decrementStock(1);
                 JOptionPane.showMessageDialog(this, "Get your change ["+ coinsToGive +"] and enjoy your " + selectedProduct.getSelectedProduct().getProductName() + "!!!");
                 
             } else {
                 JOptionPane.showMessageDialog(this, "Don't have the coins to give your change. Cancelling purchase...");
+                credit.reset();
+                selectedProduct.reset();
             }
             
             
@@ -659,8 +661,15 @@ public class VendingMachine extends javax.swing.JFrame {
     private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
         int choice = JOptionPane.showConfirmDialog(this, "Are you sure you whant to cancell the purchase?");
         if (choice == 0) {
-            JOptionPane.showMessageDialog(this, "No problem! Get your change [" + credit.getCredit() + "] and comeback anytime.");
+            
+            if ( credit.getCredit().equals(BigDecimal.ZERO) ) {
+                JOptionPane.showMessageDialog(this, "No problem! Come back soon!");
+            } else {
+                JOptionPane.showMessageDialog(this, "No problem! Get your change [" + credit.getCredit() + "] and comeback anytime.");
+            }
+            
             credit.reset();
+            selectedProduct.reset();
         }
         
     }//GEN-LAST:event_jButtonCancelActionPerformed
@@ -690,7 +699,6 @@ public class VendingMachine extends javax.swing.JFrame {
         if (confirmation == 0) {
             clearAllStock();
         }
-        
     }//GEN-LAST:event_jMenuItemClearAllActionPerformed
 
     private void jCheckBoxMenuItemShowProductStockStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemShowProductStockStateChanged
