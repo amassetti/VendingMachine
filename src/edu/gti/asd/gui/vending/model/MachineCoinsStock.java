@@ -5,6 +5,7 @@
 package edu.gti.asd.gui.vending.model;
 
 import edu.gti.asd.gui.vending.utils.Logger;
+import java.math.BigDecimal;
 import javax.swing.JLabel;
 
 /**
@@ -19,7 +20,7 @@ public class MachineCoinsStock {
     private MachineCoin coin1e;
     private MachineCoin coin2e;
     private JLabel totalMoneyLabel;
-    private double totalMoney = 0;
+    private BigDecimal totalMoney = BigDecimal.ZERO;
 
     public MachineCoinsStock() {
     }
@@ -27,8 +28,6 @@ public class MachineCoinsStock {
     public MachineCoinsStock(JLabel totalMoneyLabel) {
         this.totalMoneyLabel = totalMoneyLabel;
     }
-   
-    
 
     public MachineCoinsStock(MachineCoin coin10c, MachineCoin coin20c, MachineCoin coin50c, MachineCoin coin1e, MachineCoin coin2e, JLabel totalMoneyLabel) {
         this.coin10c = coin10c;
@@ -88,16 +87,15 @@ public class MachineCoinsStock {
         this.totalMoneyLabel = totalMoneyLabel;
     }
 
-    public double getTotalMoney() {
+    public BigDecimal getTotalMoney() {
         return totalMoney;
     }
 
-    public void setTotalMoney(double totalMoney) {
+    public void setTotalMoney(BigDecimal totalMoney) {
         this.totalMoney = totalMoney;
         totalMoneyLabel.setText(""+totalMoney);
-        
     }
-
+    
     public void reset() {
         coin10c.resetStock();
         coin20c.resetStock();
@@ -106,13 +104,13 @@ public class MachineCoinsStock {
         coin2e.resetStock();
     }
     
-    public double calculateTotalMoneyInStock() {
+    public BigDecimal calculateTotalMoneyInStock() {
         setTotalMoney(
-                (coin10c.getQuantity() * coin10c.getValue()) + 
-                (coin20c.getQuantity() * coin20c.getValue()) + 
-                (coin50c.getQuantity() * coin50c.getValue()) + 
-                (coin1e.getQuantity() * coin1e.getValue()) +
-                (coin2e.getQuantity() * coin2e.getValue())
+                coin10c.getValue().multiply(BigDecimal.valueOf(coin10c.getQuantity()))
+                .add(coin20c.getValue().multiply(BigDecimal.valueOf(coin20c.getQuantity())))
+                .add(coin50c.getValue().multiply(BigDecimal.valueOf(coin50c.getQuantity())))
+                .add(coin1e.getValue().multiply(BigDecimal.valueOf(coin1e.getQuantity())))
+                .add(coin2e.getValue().multiply(BigDecimal.valueOf(coin2e.getQuantity())))
         );
 
         totalMoneyLabel.setText("" + totalMoney);

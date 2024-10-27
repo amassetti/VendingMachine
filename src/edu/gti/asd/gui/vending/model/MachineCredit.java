@@ -4,6 +4,7 @@
  */
 package edu.gti.asd.gui.vending.model;
 
+import java.math.BigDecimal;
 import javax.swing.JLabel;
 
 /**
@@ -16,7 +17,7 @@ public class MachineCredit {
     private int coins50c;
     private int coins1e;
     private int coins2e;
-    private double credit;
+    private BigDecimal credit = new BigDecimal(0);
     private JLabel creditLabel;
 
     public MachineCredit() {
@@ -66,15 +67,15 @@ public class MachineCredit {
         this.coins2e = coins2e;
     }
 
-    public double getCredit() {
+    public BigDecimal getCredit() {
         return credit;
     }
 
-    public void setCredit(double credit) {
+    public void setCredit(BigDecimal credit) {
         this.credit = credit;
         creditLabel.setText("" + this.credit);
     }
-
+    
     public JLabel getCreditLabel() {
         return creditLabel;
     }
@@ -89,7 +90,7 @@ public class MachineCredit {
         setCoins50c(0);
         setCoins1e(0);
         setCoins2e(0);
-        setCredit(0.0);
+        setCredit(BigDecimal.valueOf(0.0));
     }
     
     public void addCoins10c(int quantity) {
@@ -113,7 +114,12 @@ public class MachineCredit {
     }
 
     public void calculateCredit() {
-        setCredit((coins10c*0.1)+(coins20c*0.2)+(coins50c*0.5)+(coins1e*1)+(coins2e*2));
+        BigDecimal credit = BigDecimal.valueOf(0.1).multiply(BigDecimal.valueOf(coins10c))
+                .add(BigDecimal.valueOf(0.2).multiply(BigDecimal.valueOf(coins20c)))
+                .add(BigDecimal.valueOf(0.5).multiply(BigDecimal.valueOf(coins50c)))
+                .add(BigDecimal.valueOf(1).multiply(BigDecimal.valueOf(coins1e)))
+                .add(BigDecimal.valueOf(2).multiply(BigDecimal.valueOf(coins2e)));
+        setCredit(credit);
     }
 
     @Override

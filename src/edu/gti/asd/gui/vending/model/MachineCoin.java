@@ -5,6 +5,7 @@
 package edu.gti.asd.gui.vending.model;
 
 import edu.gti.asd.gui.vending.utils.Logger;
+import java.math.BigDecimal;
 import java.util.Locale;
 import javax.swing.JLabel;
 
@@ -14,14 +15,14 @@ import javax.swing.JLabel;
  */
 public class MachineCoin {
     private String denomination;
-    private double value;
+    private BigDecimal value;
     private int quantity;
     private JLabel quantityLabel;
 
     public MachineCoin() {
     }
 
-    public MachineCoin(String denomination, double value, int quantity, JLabel quantityLabel) {
+    public MachineCoin(String denomination, BigDecimal value, int quantity, JLabel quantityLabel) {
         this.denomination = denomination;
         this.value = value;
         this.quantity = quantity;
@@ -38,11 +39,11 @@ public class MachineCoin {
         this.denomination = denomination;
     }
 
-    public double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
-    public void setValue(double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -89,7 +90,5 @@ public class MachineCoin {
     public String toString() {
         return "Coin{" + "denomination=" + denomination + ", value=" + value + ", quantity=" + quantity + '}';
     }
-    
-    
-    
+       
 }

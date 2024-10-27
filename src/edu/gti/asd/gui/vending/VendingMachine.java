@@ -11,6 +11,7 @@ import edu.gti.asd.gui.vending.model.MachineProduct;
 import edu.gti.asd.gui.vending.model.MachineSelectedProduct;
 import edu.gti.asd.gui.vending.utils.ChangeUtil;
 import edu.gti.asd.gui.vending.utils.Logger;
+import java.math.BigDecimal;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -557,7 +558,7 @@ public class VendingMachine extends javax.swing.JFrame {
         productSchweps.resetStock();
     }
     
-    private double calculateTotalMoneyInStock() {        
+    private BigDecimal calculateTotalMoneyInStock() {        
         return coinStock.calculateTotalMoneyInStock();
     }
     
@@ -587,25 +588,27 @@ public class VendingMachine extends javax.swing.JFrame {
         }
         
         // Check money
-        if (credit.getCredit() == 0) {
+        if (credit.getCredit().equals(BigDecimal.ZERO)) {
             JOptionPane.showMessageDialog(this, "Please enter the required amount: " + selectedProduct.getSelectedProduct().getPrice());
             return;
         }
         
-        if (credit.getCredit() < selectedProduct.getSelectedProduct().getPrice()) {
+        //if (credit.getCredit() < selectedProduct.getSelectedProduct().getPrice()) {
+        if (credit.getCredit().compareTo(BigDecimal.valueOf(selectedProduct.getSelectedProduct().getPrice())) < 0 ) {
             JOptionPane.showMessageDialog(this, "More money is required. You added: " + credit.getCredit() + ", required:  " + selectedProduct.getSelectedProduct().getPrice());
             return;
         }
         
         // Check change
-        double difference = credit.getCredit() - selectedProduct.getSelectedProduct().getPrice();
+        //double difference = credit.getCredit() - selectedProduct.getSelectedProduct().getPrice();
+        BigDecimal difference = credit.getCredit().subtract(BigDecimal.valueOf(selectedProduct.getSelectedProduct().getPrice()));
         
-        if (difference == 0) {
+        if (difference.equals(BigDecimal.ZERO)) {
             // OK
             JOptionPane.showMessageDialog(this, "Enjoy your " + selectedProduct.getSelectedProduct().getProductName() + "!!!");
         } else {
             // Give change
-            List<Double> coinsToGive = ChangeUtil.calculateCoinsToGive(difference);
+            List<Double> coinsToGive = ChangeUtil.calculateCoinsToGive(difference.doubleValue());
             if (ChangeUtil.checkCoinsStock(coinsToGive, coinStock)) {
                 ChangeUtil.updateStock(coinsToGive, coinStock);
                 selectedProduct.getSelectedProduct().decrementStock(1);
@@ -625,11 +628,11 @@ public class VendingMachine extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         Logger.info("VendingMachine.formWindowOpened", "Initializing components...");
-        MachineCoin coin10c = new MachineCoin("10c", 0.1, 0, jLabel10c);
-        MachineCoin coin20c = new MachineCoin("20c", 0.2, 0, jLabel20c);
-        MachineCoin coin50c = new MachineCoin("50c", 0.5, 0, jLabel50c);
-        MachineCoin coin1e = new MachineCoin("1e", 1, 0, jLabel1e);
-        MachineCoin coin2e = new MachineCoin("2e", 2, 0, jLabel2e);
+        MachineCoin coin10c = new MachineCoin("10c", BigDecimal.valueOf(0.1), 0, jLabel10c);
+        MachineCoin coin20c = new MachineCoin("20c", BigDecimal.valueOf(0.2), 0, jLabel20c);
+        MachineCoin coin50c = new MachineCoin("50c", BigDecimal.valueOf(0.5), 0, jLabel50c);
+        MachineCoin coin1e = new MachineCoin("1e", BigDecimal.valueOf(1), 0, jLabel1e);
+        MachineCoin coin2e = new MachineCoin("2e", BigDecimal.valueOf(2), 0, jLabel2e);
         
         coinStock = new MachineCoinsStock(coin10c, coin20c, coin50c, coin1e, coin2e, jLabelTotalMoney);
         
@@ -654,7 +657,12 @@ public class VendingMachine extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemAddStockActionPerformed
 
     private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
-        credit.reset();
+        int choice = JOptionPane.showConfirmDialog(this, "Are you sure you whant to cancell the purchase?");
+        if (choice == 0) {
+            JOptionPane.showMessageDialog(this, "No problem! Get your change [" + credit.getCredit() + "] and comeback anytime.");
+            credit.reset();
+        }
+        
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
     private void jToggleButtonCocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonCocaActionPerformed

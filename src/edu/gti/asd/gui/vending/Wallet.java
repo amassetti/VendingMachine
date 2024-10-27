@@ -5,6 +5,7 @@
 package edu.gti.asd.gui.vending;
 
 import edu.gti.asd.gui.vending.utils.Logger;
+import java.math.BigDecimal;
 
 /**
  *
@@ -17,7 +18,7 @@ public class Wallet extends javax.swing.JFrame {
     public static int q50c;
     public static int q1e;
     public static int q2e;
-    public static double moneyToAdd; 
+    public static BigDecimal moneyToAdd = new BigDecimal(0); 
 
     /**
      * Creates new form Wallet
@@ -184,7 +185,12 @@ public class Wallet extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void updateMoney() {
-        moneyToAdd = (q10c*0.10)+(q20c*0.20)+(q50c*0.50)+(q1e*1d)+(q2e*2d);
+        moneyToAdd = BigDecimal.valueOf(0.10).multiply(BigDecimal.valueOf(q10c))
+                .add(BigDecimal.valueOf(0.20).multiply(BigDecimal.valueOf(q20c)))
+                .add(BigDecimal.valueOf(0.50).multiply(BigDecimal.valueOf(q50c)))
+                .add(BigDecimal.valueOf(1.00).multiply(BigDecimal.valueOf(q1e)))
+                .add(BigDecimal.valueOf(2.00).multiply(BigDecimal.valueOf(q2e)));
+                
         Logger.info("Wallet.updateMoney", "Money to add: " + moneyToAdd);
         jTextFieldTotalToAdd.setText(""+moneyToAdd);
     }
@@ -220,7 +226,6 @@ public class Wallet extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2eActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
         q10c = 0;
         q20c = 0;
         q50c = 0;
