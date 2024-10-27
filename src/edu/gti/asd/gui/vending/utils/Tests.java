@@ -6,6 +6,7 @@ package edu.gti.asd.gui.vending.utils;
 
 import edu.gti.asd.gui.vending.model.MachineCoin;
 import edu.gti.asd.gui.vending.model.MachineCoinsStock;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -40,6 +41,30 @@ public class Tests {
         List coinsToGive = ChangeUtil.calculateCoinsToGive(13.9);
         
         System.out.println(ChangeUtil.checkCoinsStock(coinsToGive, coinsStock));
+        
+        // Decision on data type for coin value
+        // java double precision issue 
+        double sum = 0;
+        sum = sum + 5.6;
+        sum = sum + 5.8;
+        System.out.println(sum); // prints 11.399999999999999
+        
+        float sumFloat = 0;
+        sumFloat = sumFloat + 5.6f;
+        sumFloat = sumFloat + 5.8f;
+        System.out.println("sumFloat: " + sumFloat); // prints 11.4
+
+        
+        Double aDouble = new Double(0);
+        aDouble = aDouble + 5.6;
+        aDouble = aDouble + 5.8;
+        System.out.println(aDouble); // prints 11.399999999999999
+        
+        BigDecimal aBigDecimal = new BigDecimal(0);
+        aBigDecimal = aBigDecimal.add(BigDecimal.valueOf(5.6));
+        aBigDecimal = aBigDecimal.add(BigDecimal.valueOf(5.8));
+        System.out.println("aBigDecimal: " + aBigDecimal); // prints 11.4
+        
     }
     
 }
