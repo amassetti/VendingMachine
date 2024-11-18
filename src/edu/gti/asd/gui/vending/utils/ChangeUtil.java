@@ -5,6 +5,7 @@
 package edu.gti.asd.gui.vending.utils;
 
 import edu.gti.asd.gui.vending.model.MachineCoinsStock;
+import edu.gti.asd.gui.vending.model.MachineCredit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,20 +67,33 @@ public class ChangeUtil {
         return enoughCoinsToGiveChange;
     }
     
-    public static void updateStock(List<Double>coinsToGive, MachineCoinsStock coinsStock) {
+    public static void updateStock(List<Double>coinsToGive, MachineCoinsStock coinsStock, MachineCredit credit) {
         Logger.info("ChangeUtil.updateStock", "Updating stock of coins in machine. Coins to give: " + coinsToGive);
-        // Using streams to easily count
-        int quantity2e = (int) coinsToGive.stream().filter( coin -> coin == 2d).count();
-        int quantity1e = (int) coinsToGive.stream().filter( coin -> coin == 1d).count();
-        int quantity50c = (int) coinsToGive.stream().filter( coin -> coin == 0.50).count();
-        int quantity20c = (int) coinsToGive.stream().filter( coin -> coin == 0.20).count();
-        int quantity10c = (int) coinsToGive.stream().filter( coin -> coin == 0.10).count();
+        
+        if (coinsToGive != null) {
+            // Using streams to easily count
+            int quantity2e = (int) coinsToGive.stream().filter( coin -> coin == 2d).count();
+            int quantity1e = (int) coinsToGive.stream().filter( coin -> coin == 1d).count();
+            int quantity50c = (int) coinsToGive.stream().filter( coin -> coin == 0.50).count();
+            int quantity20c = (int) coinsToGive.stream().filter( coin -> coin == 0.20).count();
+            int quantity10c = (int) coinsToGive.stream().filter( coin -> coin == 0.10).count();
 
-        coinsStock.getCoin2e().decrementStock(quantity2e);
-        coinsStock.getCoin1e().decrementStock(quantity1e);
-        coinsStock.getCoin50c().decrementStock(quantity50c);
-        coinsStock.getCoin20c().decrementStock(quantity20c);
-        coinsStock.getCoin10c().decrementStock(quantity10c);
+            // decrement coins stock with the coins given
+            coinsStock.getCoin2e().decrementStock(quantity2e);
+            coinsStock.getCoin1e().decrementStock(quantity1e);
+            coinsStock.getCoin50c().decrementStock(quantity50c);
+            coinsStock.getCoin20c().decrementStock(quantity20c);
+            coinsStock.getCoin10c().decrementStock(quantity10c);            
+        }
+        
+        // increment coins stock with the coins received
+        coinsStock.getCoin2e().incrementStock(credit.getCoins2e());
+        coinsStock.getCoin1e().incrementStock(credit.getCoins1e());
+        coinsStock.getCoin50c().incrementStock(credit.getCoins50c());
+        coinsStock.getCoin20c().incrementStock(credit.getCoins20c());
+        coinsStock.getCoin10c().incrementStock(credit.getCoins10c());
+        
+        coinsStock.calculateTotalMoneyInStock();
         
     }
     

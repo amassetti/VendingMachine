@@ -602,14 +602,15 @@ public class VendingMachine extends javax.swing.JFrame {
         // Check change
         BigDecimal difference = credit.getCredit().subtract(BigDecimal.valueOf(selectedProduct.getSelectedProduct().getPrice()));
         
-        if (difference.equals(BigDecimal.ZERO)) {
+        if (difference.equals(BigDecimal.ZERO) || difference.equals(new BigDecimal("0.0"))) {
             selectedProduct.getSelectedProduct().decrementStock(1);
             JOptionPane.showMessageDialog(this, "Enjoy your " + selectedProduct.getSelectedProduct().getProductName() + "!!!");
+            ChangeUtil.updateStock(null, coinStock, credit);
         } else {
             // Give change
             List<Double> coinsToGive = ChangeUtil.calculateCoinsToGive(difference.doubleValue());
             if (ChangeUtil.checkCoinsStock(coinsToGive, coinStock)) {
-                ChangeUtil.updateStock(coinsToGive, coinStock);
+                ChangeUtil.updateStock(coinsToGive, coinStock, credit);
                 coinStock.calculateTotalMoneyInStock();
                 selectedProduct.getSelectedProduct().decrementStock(1);
                 JOptionPane.showMessageDialog(this, "Get your change ["+ coinsToGive +"] and enjoy your " + selectedProduct.getSelectedProduct().getProductName() + "!!!");
@@ -659,10 +660,15 @@ public class VendingMachine extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemAddStockActionPerformed
 
     private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
+        
+        if (selectedProduct.getSelectedProduct() == null) {
+            JOptionPane.showMessageDialog(this, "Nothing to cancel");
+            return;
+        }
+        
         int choice = JOptionPane.showConfirmDialog(this, "Are you sure you whant to cancell the purchase?");
         if (choice == 0) {
-            
-            if ( credit.getCredit().equals(BigDecimal.ZERO) ) {
+            if ( credit.getCredit() == null || credit.getCredit().equals(BigDecimal.ZERO) ) {
                 JOptionPane.showMessageDialog(this, "No problem! Come back soon!");
             } else {
                 JOptionPane.showMessageDialog(this, "No problem! Get your change [" + credit.getCredit() + "] and comeback anytime.");
