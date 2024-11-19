@@ -564,6 +564,7 @@ public class VendingMachine extends javax.swing.JFrame {
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
+        jLabelOutputMessage.setBackground(new java.awt.Color(0, 0, 0));
         jLabelOutputMessage.setForeground(new java.awt.Color(255, 0, 0));
         jLabelOutputMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelOutputMessage.setText(" --- NOTHING TO GET ---");
