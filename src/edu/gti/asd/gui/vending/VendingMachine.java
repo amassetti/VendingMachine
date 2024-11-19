@@ -493,18 +493,28 @@ public class VendingMachine extends javax.swing.JFrame {
         jLabel14.setText("10 cent");
 
         jTextFieldOutput2e.setEditable(false);
+        jTextFieldOutput2e.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jTextFieldOutput2e.setForeground(new java.awt.Color(255, 0, 0));
         jTextFieldOutput2e.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jTextFieldOutput1e.setEditable(false);
+        jTextFieldOutput1e.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jTextFieldOutput1e.setForeground(new java.awt.Color(255, 0, 0));
         jTextFieldOutput1e.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jTextFieldOutput50c.setEditable(false);
+        jTextFieldOutput50c.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jTextFieldOutput50c.setForeground(new java.awt.Color(255, 0, 0));
         jTextFieldOutput50c.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jTextFieldOutput20c.setEditable(false);
+        jTextFieldOutput20c.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jTextFieldOutput20c.setForeground(new java.awt.Color(255, 0, 0));
         jTextFieldOutput20c.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jTextFieldOutput10c.setEditable(false);
+        jTextFieldOutput10c.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jTextFieldOutput10c.setForeground(new java.awt.Color(255, 0, 0));
         jTextFieldOutput10c.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -866,23 +876,44 @@ public class VendingMachine extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
     private void jToggleButtonCocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonCocaActionPerformed
-        selectedProduct.setSelectedProduct(productCoca);
-        selectedProduct.setToggleButton(jToggleButtonCoca);
+        // If customer hasn't taken its products and change yet, advice
+        if (machineOutput.isEmpty()) {
+            selectedProduct.setSelectedProduct(productCoca);
+            selectedProduct.setToggleButton(jToggleButtonCoca);
+        } else {
+            JOptionPane.showMessageDialog(this, "The output area already has a can, please empty before proceed");
+        }
     }//GEN-LAST:event_jToggleButtonCocaActionPerformed
 
     private void jToggleButton7UpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7UpActionPerformed
-        selectedProduct.setSelectedProduct(product7up);
-        selectedProduct.setToggleButton(jToggleButton7Up);
+        // If customer hasn't taken its products and change yet, advice
+        if (machineOutput.isEmpty()) {
+            selectedProduct.setSelectedProduct(product7up);
+            selectedProduct.setToggleButton(jToggleButton7Up);
+        } else {
+            JOptionPane.showMessageDialog(this, "The output area already has a can, please empty before proceed");
+        }
+            
     }//GEN-LAST:event_jToggleButton7UpActionPerformed
 
     private void jToggleButtonFantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonFantaActionPerformed
-        selectedProduct.setSelectedProduct(productFanta);
-        selectedProduct.setToggleButton(jToggleButtonFanta);
+        // If customer hasn't taken its products and change yet, advice
+        if (machineOutput.isEmpty()) {
+            selectedProduct.setSelectedProduct(productFanta);
+            selectedProduct.setToggleButton(jToggleButtonFanta);
+        } else {
+            JOptionPane.showMessageDialog(this, "The output area already has a can, please empty before proceed");
+        }
     }//GEN-LAST:event_jToggleButtonFantaActionPerformed
 
     private void jToggleButtonSchwepsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonSchwepsActionPerformed
-        selectedProduct.setSelectedProduct(productSchweps);
-        selectedProduct.setToggleButton(jToggleButtonSchweps);
+        // If customer hasn't taken its products and change yet, advice
+        if (machineOutput.isEmpty()) {
+            selectedProduct.setSelectedProduct(productSchweps);
+            selectedProduct.setToggleButton(jToggleButtonSchweps);
+        } else {
+            JOptionPane.showMessageDialog(this, "The output area already has a can, please empty before proceed");
+        }
     }//GEN-LAST:event_jToggleButtonSchwepsActionPerformed
 
     private void jMenuItemClearAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClearAllActionPerformed
